@@ -1,0 +1,29 @@
+{
+  "name": "nextjs-stripe-subscriptions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Next.js + Stripe subscriptions with automatic-renewal disclosures, consent, reminder emails and online cancellation, checked by Checkbox.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20.9" },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "checkbox:preflight": "tsx scripts/preflight.ts"
+  },
+  "dependencies": {
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "stripe": "^23.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

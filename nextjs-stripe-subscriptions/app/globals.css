@@ -1,0 +1,59 @@
+:root {
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --accent: #0f766e;
+  --accent-text: #ffffff;
+  --terms-bg: #f1f5f9;
+  --terms-border: #64748b;
+  --danger: #b91c1c;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1120;
+    --surface: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #374151;
+    --accent: #2dd4bf;
+    --accent-text: #042f2e;
+    --terms-bg: #1f2937;
+    --terms-border: #9ca3af;
+    --danger: #f87171;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+a { color: var(--accent); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+header.site, footer.site { max-width: 960px; margin: 0 auto; padding: 16px; display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+header.site nav, footer.site nav { display: flex; gap: 16px; flex-wrap: wrap; }
+footer.site { border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+.brand { font-weight: 700; text-decoration: none; color: var(--text); }
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 8px; }
+.lead { color: var(--muted); margin: 0 0 32px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: var(--surface); }
+.price { font-size: 2rem; font-weight: 700; }
+.price small { font-size: 1rem; font-weight: 400; color: var(--muted); }
+.fine { color: var(--muted); font-size: 15px; }
+.button { display: inline-block; border: 0; border-radius: 8px; padding: 12px 18px; font: inherit; font-weight: 600; background: var(--accent); color: var(--accent-text); text-decoration: none; cursor: pointer; }
+.button:disabled { opacity: 0.5; cursor: not-allowed; }
+.button.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.button.danger { background: var(--danger); color: #fff; }
+.checkout { max-width: 560px; }
+.renewal-terms { margin: 16px 0 12px; padding: 12px 14px; font-size: 16px; font-weight: 600; background: var(--terms-bg); border: 1px solid var(--terms-border); border-radius: 8px; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: 16px; margin: 0 0 16px; }
+.consent input { margin-top: 5px; width: 18px; height: 18px; flex: none; }
+.error { color: var(--danger); font-weight: 600; }
+dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; }
+dl.facts dt { color: var(--muted); }
+dl.facts dd { margin: 0; }
+ul.features { padding-left: 20px; }

@@ -1,0 +1,42 @@
+# Render Blueprint for the "Deploy to Render" button in express-stripe-subscriptions/README.md.
+services:
+  - type: web
+    name: subscriptions
+    runtime: node
+    rootDir: express-stripe-subscriptions
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CRON_SECRET
+        generateValue: true
+      - key: BRAND_NAME
+        value: Acme
+      - key: CHECKBOX_SECRET_KEY
+        sync: false
+      - key: CHECKBOX_PUBLISHABLE_KEY
+        sync: false
+  - type: cron
+    name: subscriptions-reminders
+    runtime: node
+    rootDir: express-stripe-subscriptions
+    schedule: "0 15 * * *"
+    buildCommand: npm install
+    startCommand: npm run reminders
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: BRAND_NAME
+        value: Acme
+      - key: CHECKBOX_SECRET_KEY
+        sync: false

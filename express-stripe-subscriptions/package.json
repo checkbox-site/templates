@@ -1,0 +1,19 @@
+{
+  "name": "express-stripe-subscriptions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express + Stripe subscriptions with automatic-renewal disclosures, consent, reminder emails and online cancellation, checked by Checkbox.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20.19" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --env-file-if-exists=.env --watch server.js",
+    "reminders": "node scripts/reminders.js",
+    "checkbox:preflight": "node --env-file-if-exists=.env scripts/preflight.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "stripe": "^23.1.0"
+  }
+}
